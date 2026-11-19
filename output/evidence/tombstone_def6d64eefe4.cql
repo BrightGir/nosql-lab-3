@@ -1,0 +1,2 @@
+CREATE KEYSPACE business_events WITH replication = {'class':'NetworkTopologyStrategy','datacenter1':3};
+CREATE TABLE business_events.tombstone_def6d64eefe4 (bucket int, id int, value text, PRIMARY KEY (bucket,id));

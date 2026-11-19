@@ -1,0 +1,96 @@
+{
+  "table": "tombstone_0b6891cd7d4f",
+  "verification": "Offline re-validation of all 12 previously captured SSTable dumps. No database writes or new measurements.",
+  "schema": "CREATE KEYSPACE business_events WITH replication = {'class':'NetworkTopologyStrategy','datacenter1':3};\nCREATE TABLE business_events.tombstone_0b6891cd7d4f (bucket int, id int, value text, PRIMARY KEY (bucket,id));",
+  "snapshots": {
+    "before_delete": {
+      "nodes": {
+        "1": {
+          "dump": "tombstone_0b6891cd7d4f-before_delete-node1.json",
+          "tombstone_fields": 0,
+          "bytes": 21433,
+          "visible_rows_from_sstables": 100
+        },
+        "2": {
+          "dump": "tombstone_0b6891cd7d4f-before_delete-node2.json",
+          "tombstone_fields": 0,
+          "bytes": 21433,
+          "visible_rows_from_sstables": 100
+        },
+        "3": {
+          "dump": "tombstone_0b6891cd7d4f-before_delete-node3.json",
+          "tombstone_fields": 0,
+          "bytes": 21433,
+          "visible_rows_from_sstables": 100
+        }
+      }
+    },
+    "after_delete": {
+      "nodes": {
+        "1": {
+          "dump": "tombstone_0b6891cd7d4f-after_delete-node1.json",
+          "tombstone_fields": 80,
+          "bytes": 42142,
+          "visible_rows_from_sstables": 20
+        },
+        "2": {
+          "dump": "tombstone_0b6891cd7d4f-after_delete-node2.json",
+          "tombstone_fields": 80,
+          "bytes": 42142,
+          "visible_rows_from_sstables": 20
+        },
+        "3": {
+          "dump": "tombstone_0b6891cd7d4f-after_delete-node3.json",
+          "tombstone_fields": 80,
+          "bytes": 42142,
+          "visible_rows_from_sstables": 20
+        }
+      }
+    },
+    "before_grace": {
+      "nodes": {
+        "1": {
+          "dump": "tombstone_0b6891cd7d4f-before_grace-node1.json",
+          "tombstone_fields": 80,
+          "bytes": 24963,
+          "visible_rows_from_sstables": 20
+        },
+        "2": {
+          "dump": "tombstone_0b6891cd7d4f-before_grace-node2.json",
+          "tombstone_fields": 80,
+          "bytes": 24963,
+          "visible_rows_from_sstables": 20
+        },
+        "3": {
+          "dump": "tombstone_0b6891cd7d4f-before_grace-node3.json",
+          "tombstone_fields": 80,
+          "bytes": 24963,
+          "visible_rows_from_sstables": 20
+        }
+      }
+    },
+    "after_gc": {
+      "nodes": {
+        "1": {
+          "dump": "tombstone_0b6891cd7d4f-after_gc-node1.json",
+          "tombstone_fields": 0,
+          "bytes": 4493,
+          "visible_rows_from_sstables": 20
+        },
+        "2": {
+          "dump": "tombstone_0b6891cd7d4f-after_gc-node2.json",
+          "tombstone_fields": 0,
+          "bytes": 4493,
+          "visible_rows_from_sstables": 20
+        },
+        "3": {
+          "dump": "tombstone_0b6891cd7d4f-after_gc-node3.json",
+          "tombstone_fields": 0,
+          "bytes": 4493,
+          "visible_rows_from_sstables": 20
+        }
+      }
+    }
+  },
+  "verified": true
+}

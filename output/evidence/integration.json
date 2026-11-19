@@ -1,0 +1,319 @@
+{
+  "stale_revision": {
+    "error": "conflict",
+    "message": "Stale revision; reload event"
+  },
+  "explain": {
+    "dbname": "library",
+    "index": {
+      "ddoc": "_design/event-search",
+      "name": "by-type-updated",
+      "type": "json",
+      "partitioned": false,
+      "def": {
+        "fields": [
+          {
+            "kind": "asc"
+          },
+          {
+            "type": "asc"
+          },
+          {
+            "updatedAt": "asc"
+          },
+          {
+            "_id": "asc"
+          }
+        ]
+      }
+    },
+    "partitioned": false,
+    "selector": {
+      "$and": [
+        {
+          "kind": {
+            "$eq": "event"
+          }
+        },
+        {
+          "type": {
+            "$eq": "test-bcecf799-30ed-49ed-83a5-b08378423ee5"
+          }
+        },
+        {
+          "state": {
+            "$ne": "DELETED"
+          }
+        },
+        {
+          "updatedAt": {
+            "$gte": "1970-01-01T00:00:00.000000000Z"
+          }
+        }
+      ]
+    },
+    "opts": {
+      "use_index": [
+        "event-search",
+        "by-type-updated"
+      ],
+      "bookmark": "nil",
+      "limit": 25,
+      "skip": 0,
+      "sort": {
+        "kind": "asc",
+        "type": "asc",
+        "updatedAt": "asc",
+        "_id": "asc"
+      },
+      "fields": [],
+      "partition": "",
+      "r": 1,
+      "conflicts": false,
+      "stale": false,
+      "update": true,
+      "stable": false,
+      "execution_stats": true,
+      "allow_fallback": true
+    },
+    "limit": 25,
+    "skip": 0,
+    "fields": [],
+    "index_candidates": [
+      {
+        "index": {
+          "ddoc": "_design/orders-by-event",
+          "name": "orders-by-event",
+          "type": "json",
+          "partitioned": false,
+          "def": {
+            "fields": [
+              {
+                "kind": "asc"
+              },
+              {
+                "eventId": "asc"
+              }
+            ]
+          }
+        },
+        "analysis": {
+          "usable": false,
+          "reasons": [
+            {
+              "name": "field_mismatch"
+            }
+          ],
+          "ranking": 1,
+          "covering": false
+        }
+      },
+      {
+        "index": {
+          "ddoc": "_design/orders-by-draft",
+          "name": "orders-by-draft",
+          "type": "json",
+          "partitioned": false,
+          "def": {
+            "fields": [
+              {
+                "kind": "asc"
+              },
+              {
+                "draftId": "asc"
+              }
+            ]
+          }
+        },
+        "analysis": {
+          "usable": false,
+          "reasons": [
+            {
+              "name": "field_mismatch"
+            }
+          ],
+          "ranking": 1,
+          "covering": false
+        }
+      },
+      {
+        "index": {
+          "ddoc": "_design/by-kind",
+          "name": "by-kind",
+          "type": "json",
+          "partitioned": false,
+          "def": {
+            "fields": [
+              {
+                "kind": "asc"
+              }
+            ]
+          }
+        },
+        "analysis": {
+          "usable": false,
+          "reasons": [
+            {
+              "name": "sort_order_mismatch"
+            }
+          ],
+          "ranking": 1,
+          "covering": false
+        }
+      },
+      {
+        "index": {
+          "ddoc": null,
+          "name": "_all_docs",
+          "type": "special",
+          "def": {
+            "fields": [
+              {
+                "_id": "asc"
+              }
+            ]
+          }
+        },
+        "analysis": {
+          "usable": false,
+          "reasons": [
+            {
+              "name": "field_mismatch"
+            }
+          ],
+          "ranking": 1,
+          "covering": null
+        }
+      }
+    ],
+    "selector_hints": [
+      {
+        "type": "json",
+        "indexable_fields": [
+          "kind",
+          "type",
+          "updatedAt"
+        ],
+        "unindexable_fields": [
+          "state"
+        ]
+      }
+    ],
+    "mrargs": {
+      "include_docs": true,
+      "view_type": "map",
+      "reduce": false,
+      "partition": null,
+      "start_key": [
+        "event",
+        "test-bcecf799-30ed-49ed-83a5-b08378423ee5",
+        "1970-01-01T00:00:00.000000000Z"
+      ],
+      "end_key": [
+        "event",
+        "test-bcecf799-30ed-49ed-83a5-b08378423ee5",
+        "<MAX>"
+      ],
+      "direction": "fwd",
+      "stable": false,
+      "update": true,
+      "conflicts": "undefined"
+    },
+    "covering": false
+  },
+  "search": {
+    "docs": [
+      {
+        "_id": "event:f69e49b3-9f99-48c1-9800-e36666275c70",
+        "_rev": "2-bb1ec10510437efeace95fbb13fe1a6a",
+        "id": "f69e49b3-9f99-48c1-9800-e36666275c70",
+        "title": "test-bcecf799-30ed-49ed-83a5-b08378423ee5",
+        "type": "test-bcecf799-30ed-49ed-83a5-b08378423ee5",
+        "startsAt": "2026-12-01T10:00:00Z",
+        "capacity": 20,
+        "createdAt": "2026-11-11T21:57:01.388346117Z",
+        "kind": "event",
+        "schemaVersion": 2,
+        "updatedAt": "2026-11-11T21:57:01.418737560Z",
+        "state": "CLOSED",
+        "lastModified": {
+          "by": "alice",
+          "action": "UPDATE",
+          "state": "CLOSED",
+          "at": "2026-11-11T21:57:01.418737560Z"
+        },
+        "history": [
+          {
+            "by": "system",
+            "action": "CREATE",
+            "state": "OPEN",
+            "at": "2026-11-11T21:57:01.388465408Z"
+          },
+          {
+            "by": "alice",
+            "action": "UPDATE",
+            "state": "CLOSED",
+            "at": "2026-11-11T21:57:01.418737560Z"
+          }
+        ]
+      }
+    ],
+    "bookmark": "g1AAAADleJyVzs0KwjAMAOAyFDz5CN4VImnT3z2HJy-ytRk6p4Irgm9vK_gAhhBCSD4yCSGac5PEes7dM1_5fUqPeEm3Mt_xi--5HWxgHXqCMIQA2kcJwSMCky2hnIkOq7D6CVO5XVRg-QVqt808Z-gjx8EVhJAT6FCKp85Aj56c14qYTd3eKFQWpCx5ULI1rkW519I7csbi8c_fxvEDh_05iQ",
+    "execution_stats": {
+      "total_keys_examined": 1,
+      "total_docs_examined": 1,
+      "total_quorum_docs_examined": 0,
+      "results_returned": 1,
+      "execution_time_ms": 0.714
+    }
+  },
+  "actions": {
+    "rows": [
+      {
+        "key": [
+          "alice",
+          "UPDATE"
+        ],
+        "value": 1
+      },
+      {
+        "key": [
+          "audit-a7335f32-ecda-4e06-9eec-d8632686597a",
+          "CREATE"
+        ],
+        "value": 1
+      },
+      {
+        "key": [
+          "system",
+          "CREATE"
+        ],
+        "value": 2
+      },
+      {
+        "key": [
+          "test-bcecf799-30ed-49ed-83a5-b08378423ee5",
+          "CREATE"
+        ],
+        "value": 2
+      },
+      {
+        "key": [
+          "test-bcecf799-30ed-49ed-83a5-b08378423ee5",
+          "UPDATE"
+        ],
+        "value": 1
+      }
+    ]
+  },
+  "validation": {
+    "error": "forbidden",
+    "reason": "Invalid event"
+  },
+  "replication": {
+    "primary": "2-bb1ec10510437efeace95fbb13fe1a6a",
+    "replica": "2-bb1ec10510437efeace95fbb13fe1a6a"
+  },
+  "draft_ttl": "expired",
+  "result": "PASS"
+}

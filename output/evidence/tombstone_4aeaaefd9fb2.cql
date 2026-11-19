@@ -1,0 +1,2 @@
+CREATE KEYSPACE business_events WITH replication = {'class':'NetworkTopologyStrategy','datacenter1':3};
+CREATE TABLE business_events.tombstone_4aeaaefd9fb2 (bucket int, id int, value text, PRIMARY KEY (bucket,id)) WITH gc_grace_seconds=600 AND tombstone_gc={'mode':'timeout'};

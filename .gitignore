@@ -1,0 +1,17 @@
+build/
+.gradle/
+.idea/
+*.iml
+*.db
+.DS_Store
+tmp/
+__pycache__/
+*.pyc
+.venv/
+LAB2_CHEATSHEET.*
+
+.env
+.env.*
+!.env.example
+*.pem
+*.key

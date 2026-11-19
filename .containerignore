@@ -1,0 +1,11 @@
+.git/
+build/
+.gradle/
+.idea/
+.venv/
+.DS_Store
+tmp/
+output/
+__pycache__/
+*.pyc
+LAB2_CHEATSHEET.*

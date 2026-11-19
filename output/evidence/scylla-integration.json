@@ -1,0 +1,65 @@
+{
+  "exact_operations": {
+    "f1c3169a-b8d2-49a2-becd-5c943fdd24d9": [
+      [
+        "CREATE_DRAFT",
+        "SUCCESS"
+      ],
+      [
+        "SUBMIT_DRAFT",
+        "SUCCESS"
+      ]
+    ],
+    "3839a0b3-3ae1-4f0d-ae1d-81b3648b9c94": [
+      [
+        "SUBMIT_DRAFT",
+        "FAILURE"
+      ]
+    ],
+    "567ade9e-cb38-47d5-91c3-31f4178d00ce": [
+      [
+        "CREATE_EVENT",
+        "SUCCESS"
+      ]
+    ]
+  },
+  "result": {
+    "count": 19,
+    "pages": 19,
+    "sample": {
+      "id": "e8682a60-de1b-11f1-917d-59e9e668545d",
+      "result": "SUCCESS",
+      "operation": "SUBMIT_DRAFT",
+      "entity": "f1c3169a-b8d2-49a2-becd-5c943fdd24d9",
+      "httpStatus": 201,
+      "durationMs": 34,
+      "occurredAt": "2026-11-11T22:04:46.982Z"
+    }
+  },
+  "operation": {
+    "count": 8,
+    "pages": 8,
+    "sample": {
+      "id": "e86b85c0-de1b-11f1-917d-59e9e668545d",
+      "result": "FAILURE",
+      "operation": "SUBMIT_DRAFT",
+      "entity": "3839a0b3-3ae1-4f0d-ae1d-81b3648b9c94",
+      "httpStatus": 409,
+      "durationMs": 12,
+      "occurredAt": "2026-11-11T22:04:47.004Z"
+    }
+  },
+  "entity": {
+    "count": 2,
+    "pages": 2,
+    "sample": {
+      "id": "e8682a60-de1b-11f1-917d-59e9e668545d",
+      "result": "SUCCESS",
+      "operation": "SUBMIT_DRAFT",
+      "entity": "f1c3169a-b8d2-49a2-becd-5c943fdd24d9",
+      "httpStatus": 201,
+      "durationMs": 34,
+      "occurredAt": "2026-11-11T22:04:46.982Z"
+    }
+  }
+}
